@@ -1,0 +1,14 @@
+@import "icons/*.png"
++all-icons-sprites
+
+.icon
+  +inline-block
+
+$icons: "auth"
+
+@each $icon in $icons
+
+  .icon-#{$icon}
+    +icons-sprite(#{$icon})
+    height: icons-sprite-height(#{$icon})
+    width: icons-sprite-width(#{$icon})

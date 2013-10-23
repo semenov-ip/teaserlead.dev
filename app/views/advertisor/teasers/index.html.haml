@@ -1,0 +1,24 @@
+.row
+  - model_class = Teaser
+  .page-header
+    %h1=t '.title', :default => model_class.model_name.human.pluralize(:ru).titleize
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= model_class.human_attribute_name(:id)
+        %th= model_class.human_attribute_name(:text)
+        %th= model_class.human_attribute_name(:image)
+        %th= model_class.human_attribute_name(:advertisement_campaign_id)
+        %th=t '.actions', :default => t("helpers.actions")
+    %tbody
+      - @teasers.each do |teaser|
+        %tr
+          %td= link_to teaser.id, advertisor_teaser_path(teaser)
+          %td= link_to teaser.text, advertisor_teaser_path(teaser)
+          %td= image_tag teaser.image.thumb_50
+          %td= teaser.advertisement_campaign_id
+          %td
+            = link_to t('.edit', :default => t("helpers.links.edit")), edit_advertisor_teaser_path(teaser), :class => 'button small'
+            = link_to t('.destroy', :default => t("helpers.links.destroy")), advertisor_teaser_path(teaser), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'button small alert'
+
+  = link_to t('.new', :default => t("helpers.links.new")), new_advertisor_teaser_path, :class => 'button '

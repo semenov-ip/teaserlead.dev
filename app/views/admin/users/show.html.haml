@@ -1,0 +1,15 @@
+%p#notice= notice
+%dl
+  %dt
+    email:
+  %dd
+    = @user.email
+  %dt
+    role:
+  %dd
+    = @user.roles
+
+%br
+
+= link_to "Редактировать", edit_user_path
+= link_to "Удалиться", user_path, method: :delete

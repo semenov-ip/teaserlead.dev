@@ -1,0 +1,8 @@
+= simple_form_for [:webmaster, @site], :html => { :class => 'form-horizontal' } do |f|
+  = f.input :category_id, collection: Category.ancestry_options
+  = f.input :title
+  = f.input :url
+  = f.input :description
+  .form-actions
+    = f.button :submit, :class => ''
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), webmaster_sites_path, :class => 'button secondary'

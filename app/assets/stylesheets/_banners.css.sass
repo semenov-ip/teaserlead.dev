@@ -1,0 +1,72 @@
+$banner-height: emCalc(500px)
+
+.section-main-banner
+  overflow: hidden
+  height: $banner-height
+  margin:
+    bottom: emCalc(60px)
+  position: relative
+
+  .orbit-slides-container
+    height: $banner-height
+
+.main-page-slider
+  list-style: none
+
+  > li
+
+    &.slide-1
+      background-color: $base-green-color
+      +filter-gradient(lighten($base-green-color, 15%), $base-green-color, horizontal)
+      +background-image(radial-gradient(center, ellipse cover,  lighten($base-green-color, 15%) 0%,$base-green-color 100%))
+      color: #fff
+      padding:
+        top: emCalc(40px)
+
+      h1
+        color: #fff
+
+
+    &.slide-2
+      background-color: $base-blue-color
+      +filter-gradient(lighten($base-blue-color, 15%), $base-blue-color, horizontal)
+      +background-image(radial-gradient(center, ellipse cover,  lighten($base-blue-color, 15%) 0%,$base-blue-color 100%))
+      color: #fff
+      padding:
+        top: emCalc(40px)
+
+      h1
+        color: #fff
+
+      .button-arr.white
+        color: $base-blue-color
+
+    &.slide-3
+      background-color: #ccc
+      +filter-gradient(lighten(#ccc, 5%), #ccc, horizontal)
+      +background-image(radial-gradient(center, ellipse cover,  lighten(#ccc, 5%) 0%,#ccc 100%))
+
+  .image-block
+    text-align: center
+
+    img
+      display: inline
+
+.orbit-bullets
+  position: absolute
+  bottom: 0
+  left: 50%
+  top: auto
+
+  li
+    background:
+      color: transparent
+    border:
+      color: #fff
+      width: 1px
+
+    &:after
+      display: none
+
+    &.active
+      background: #fff

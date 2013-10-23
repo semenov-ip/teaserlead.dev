@@ -1,0 +1,24 @@
+.row
+  - model_class = AdvertisementCampaign
+  .page-header
+    %h1=t '.title', :default => model_class.model_name.human.pluralize(:ru).titleize
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= model_class.human_attribute_name(:id)
+        %th= model_class.human_attribute_name(:name)
+        %th= model_class.human_attribute_name(:url)
+        %th= model_class.human_attribute_name(:category)
+        %th=t '.actions', :default => t("helpers.actions")
+    %tbody
+      - @advertisement_campaigns.each do |item|
+        %tr
+          %td= link_to item.id, admin_advertisement_campaign_path(item)
+          %td= item.name
+          %td= link_to item.url, item.url, target: "_blank"
+          %td= item.category.name if item.category.present?
+          %td
+            = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_advertisement_campaign_path(item), :class => 'button small'
+            = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_advertisement_campaign_path(item), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'button small alert'
+
+  = link_to t('.new', :default => t("helpers.links.new")), new_admin_advertisement_campaign_path, :class => 'button small'

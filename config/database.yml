@@ -1,0 +1,22 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: teaserlead_development
+  pool: 5
+  username: dev
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: teaserlead_test
+  pool: 5
+  username: dev
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: postgresql5.locum.ru
+  database: kinley_teaserl40
+  pool: 5
+  username: kinley_teaserl40
+  password: mDq4FKwXbzm

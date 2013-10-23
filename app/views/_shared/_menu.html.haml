@@ -1,0 +1,31 @@
+%ul.inline-list.right.header-main-nav
+  %li.active
+    %a{href: "#"} ВЕБМАСТЕРАМ
+  %li
+    %a{href: "/advertisers/"} РЕКЛАМОДАТЕЛЯМ
+  %li
+    %li= link_to "Контакты", "#"
+  %li
+    %li= link_to "О системе", "#"
+
+-#
+  %ul.left
+    %li.divider
+    %li= link_to "Категории", categories_path
+    %li.has-dropdown
+      %a{href: "#"}
+        Рекламодатель
+      %ul.dropdown
+        %li= link_to "Рекламные кампании", advertisement_campaigns_path
+        %li= link_to "Тизеры", teasers_path
+    %li.has-dropdown
+      %a{href: "#"}
+        Вебмастер
+      %ul.dropdown
+        %li= link_to "Площадки", sites_path
+        %li= link_to "Тизерные блоки", teaser_blocks_path
+    %li= link_to "Статистика", mockups_path
+    %li= link_to "О системе", "#"
+    %li= link_to "Рекламодателям", "#"
+    %li= link_to "Вебмастерам", "#"
+    %li= link_to "Контакты", "#"

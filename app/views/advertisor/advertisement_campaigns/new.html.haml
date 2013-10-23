@@ -1,0 +1,12 @@
+%section.section-main-content
+  - model_class = AdvertisementCampaign
+  .row
+    .columns.small-12
+      .page-header
+        %h1=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize
+  .row
+    .columns.small-3
+      = render "_shared/side_nav"
+          
+    .columns.small-9
+      = render :partial => "form"

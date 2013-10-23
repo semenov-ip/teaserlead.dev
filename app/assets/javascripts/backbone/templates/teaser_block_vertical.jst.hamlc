@@ -1,0 +1,11 @@
+%style .teaser-item .dscr { color:#{@text_color}; } .teaser-block-#{@block_position}{background: #{@block_bg_color};border:1px solid #{@block_border_color}}
+%div{class: "teaser-block-#{@block_position} teaser-block-#{@block_position}-#{@block_size}"}
+  - for i in [1..@teaser_count]
+    .teaser-item
+      %a{href:'#'}
+        %img{src:"http://lorempixel.com/#{@block_size}/#{@block_size}/"}
+        .dscr
+          Рекламный текст содержащий 38 символов
+%textarea{style:"width: 100%;height:90px;"}
+  - for name, value of @
+    #{name}:#{value}

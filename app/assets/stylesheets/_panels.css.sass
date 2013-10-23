@@ -1,0 +1,40 @@
+$panel-block-padding: 20px
+
+.panel-block
+  border:
+    color: $color-gray
+    width: 1px
+    style: solid
+  padding: $panel-block-padding
+  margin:
+    bottom: emCalc(40px)
+
+
+  > header
+    margin: emCalc(-$panel-block-padding - 1) emCalc(-$panel-block-padding - 1) emCalc($panel-block-padding)
+    background: $color-gray
+    padding: emCalc(18px) emCalc(40px)
+
+    h1, h2, h3
+      margin: 0
+      text-transform: uppercase
+
+  &.blue
+    border:
+      color: $base-blue-color
+
+    > header
+      background: $base-blue-color
+
+      h1, h2, h3
+        color: white
+
+  &.green
+    border:
+      color: $base-green-color
+
+    > header
+      background: $base-green-color
+
+      h1, h2, h3
+        color: white

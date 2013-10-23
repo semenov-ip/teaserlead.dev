@@ -1,0 +1,14 @@
+.teaser-block-constructor-js
+  = simple_form_for [:advertisor, @teaser], :html => { :class => 'form-horizontal' } do |f|
+    = f.input :advertisement_campaign_id, collection: AdvertisementCampaign.all
+    = f.input :text
+    - if @teaser.image?
+      = image_tag @teaser.image.thumb_200
+      = f.input :image, required: false 
+    - else
+      = f.input :image
+    = f.hidden_field :image_cache
+    .form-actions
+      = f.button :submit, :class => ''
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), teasers_path, :class => 'button secondary'
+#files

@@ -1,0 +1,44 @@
+%header.header-main-block.sticky
+  .row
+    .columns.small-3
+      %a.main-logo-link{href: "/"}
+        = image_tag "logo.png"
+    .columns.small-9
+
+      %ul.header-auth-block.inline-list.right
+        - if signed_in?
+          %li= link_to "Личный кабинет", user_path
+          %li= link_to "Выйти", session_path, method: :delete
+          
+        - else
+          %li
+            %a{href: "#", data:{dropdown: "auth-header-form"}}
+              Авторизация
+              %i.icon.icon-auth
+            #auth-header-form.f-dropdown.content.small
+              -#
+                = simple_form_for @login_form, :url => session_path, :validate => true do |f|
+                  = f.error_notification
+                  = f.input :email, label: false, placeholder: "email"
+                  = f.input :password, label: false, placeholder: "password" 
+                  = f.button :submit, "Войти"
+
+      = render '/_shared/menu'
+
+
+
+
+
+  / %nav.top-bar
+  /   %ul.title-area
+  /     %li.name
+  /       %h1= link_to "Teaserlead", root_path
+  /   %section.top-bar-section
+  /     = render '/_shared/menu'
+
+  /     %ul.right
+  /       - if signed_in?
+  /         %li= link_to "Личный кабинет", user_path
+  /         %li= link_to "Выйти", session_path, method: :delete
+  /       - else
+  /         %li= link_to "Войти", new_session_path

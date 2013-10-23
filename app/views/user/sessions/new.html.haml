@@ -1,0 +1,12 @@
+%section.section-main-content
+  .row
+    .columns.small-4.small-centered
+      %h4 Авторизация
+      %hr.slim
+      = simple_form_for @login_form, :url => session_path, :validate => true do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :email
+          = f.input :password
+        .form-actions
+          = f.button :submit, "Войти"

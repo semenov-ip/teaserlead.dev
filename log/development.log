@@ -1,0 +1,503 @@
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-22 14:41:43 +0400
+
+PG::ConnectionBad - FATAL:  database "teaserlead_development" does not exist
+:
+  activerecord (4.0.0) lib/active_record/connection_adapters/postgresql_adapter.rb:825:in `connect'
+  activerecord (4.0.0) lib/active_record/connection_adapters/postgresql_adapter.rb:542:in `initialize'
+  activerecord (4.0.0) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `postgresql_connection'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:440:in `new_connection'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:450:in `checkout_new_connection'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:421:in `acquire_connection'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:356:in `block in checkout'
+  /Users/igor/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/igor/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:546:in `retrieve_connection'
+  activerecord (4.0.0) lib/active_record/connection_handling.rb:79:in `retrieve_connection'
+  activerecord (4.0.0) lib/active_record/connection_handling.rb:53:in `connection'
+  activerecord (4.0.0) lib/active_record/migration.rb:792:in `current_version'
+  activerecord (4.0.0) lib/active_record/migration.rb:800:in `needs_migration?'
+  activerecord (4.0.0) lib/active_record/migration.rb:379:in `check_pending!'
+  activerecord (4.0.0) lib/active_record/migration.rb:366:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:373:in `_run__4385490019315668211__call__callbacks'
+  activesupport (4.0.0) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/igor/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/igor/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/igor/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70362003837940/variables" for 127.0.0.1 at 2013-10-22 14:41:43 +0400
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20130627144210)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (8.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password_digest" character varying(255), "roles" character varying(255) DEFAULT '---
+- :user
+' NOT NULL, "last_sign_in_at" timestamp DEFAULT '1970-01-01' NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20130627144210"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTeasers (20130628010209)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "teasers" ("id" serial primary key, "text" character varying(255) NOT NULL, "image" character varying(255) NOT NULL, "url" character varying(255) DEFAULT '' NOT NULL, "advertisement_campaign_id" integer NOT NULL, "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20130628010209"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategories (20130708000322)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "name" character varying(255), "ancestry" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.6ms)[0m  CREATE INDEX "index_categories_on_ancestry" ON "categories" ("ancestry")
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20130708000322"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to CreateTeaserBlocks (20130708000903)
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (9.7ms)[0m  CREATE TABLE "teaser_blocks" ("id" serial primary key, "topic" character varying(255), "text_color" character varying(255), "text_encoding" character varying(255), "text_position" character varying(255), "font" character varying(255), "block_size" integer, "block_bg_color" character varying(255), "block_border_color" character varying(255), "block_margin" integer, "block_position" character varying(255), "teaser_count" integer, "site_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20130708000903"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to CreateAdvertisementCampaigns (20130708014709)
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (8.1ms)[0m  CREATE TABLE "advertisement_campaigns" ("id" serial primary key, "name" character varying(255), "url" character varying(255), "category_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.7ms)[0m  [1mCREATE INDEX "index_advertisement_campaigns_on_category_id" ON "advertisement_campaigns" ("category_id")[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20130708014709"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSites (20130708021240)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (6.8ms)[0m  [1mCREATE TABLE "sites" ("id" serial primary key, "category_id" integer, "title" character varying(255) NOT NULL, "url" character varying(255) NOT NULL, "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.9ms)[0m  CREATE INDEX "index_sites_on_category_id" ON "sites" ("category_id")
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20130708021240"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-23 10:38:07 +0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered _shared/_banner.html.haml (72.8ms)
+  Rendered welcome/index.html.haml within layouts/application (203.6ms)
+  Rendered _shared/_menu.html.haml (6.3ms)
+  Rendered _shared/_header.html.haml (28.6ms)
+  Rendered _shared/_footer.html.haml (13.6ms)
+Completed 200 OK in 12936ms (Views: 12866.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/vendor/custom.modernizr.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/opensans-condbold-webfont-bold.ttf" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/vendor/highstock/highstock.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:21 +0400
+
+
+Started GET "/assets/vendor/highstock/hs.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/backbone.marionette.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/Backbone.ModelBinder.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/hamlcoffee.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/backbone/teaserlead.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/backbone/templates/teaser_block_vertical.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/backbone/models/teaser_block.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/backbone/views/teaser_block_constructor.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/backbone/views/teaser_block_vertical.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/widgets.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/widgets/teaser_block_constructor.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/initializers/base.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/vendor/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/vendor/load-image.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/vendor/canvas-to-blob.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/vendor/tmpl.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload-fp.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload-ui.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/locale.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/index.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery.minicolors.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/jquery.minicolors.simple_form.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/cocoon.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-23 10:38:22 +0400
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-23 10:38:23 +0400
+
+
+Started GET "/assets/icons-s70d87a18fe.png" for 127.0.0.1 at 2013-10-23 10:38:23 +0400
+
+
+Started GET "/assets/btns-sc1cf4af97b.png" for 127.0.0.1 at 2013-10-23 10:38:23 +0400
+
+
+Started GET "/assets/banner-img-1.png" for 127.0.0.1 at 2013-10-23 10:38:23 +0400
+
+
+Started GET "/assets/banner-img-2.png" for 127.0.0.1 at 2013-10-23 10:38:23 +0400
+
+
+Started GET "/assets/banner-img-3.png" for 127.0.0.1 at 2013-10-23 10:38:23 +0400
+
+
+Started GET "/advertisor/user/new" for 127.0.0.1 at 2013-10-23 10:39:33 +0400
+Processing by Advertisor::UsersController#new as HTML
+  Rendered advertisor/users/_form.html.haml (318.7ms)
+  Rendered advertisor/users/new.html.haml within layouts/advertisor (324.1ms)
+  Rendered _shared/_advertisor_menu.html.haml (16.9ms)
+  Rendered _shared/_menu.html.haml (0.8ms)
+  Rendered _shared/_header.html.haml (4.7ms)
+  Rendered _shared/_footer.html.haml (1.9ms)
+  Rendered layouts/application.html.haml (44.8ms)
+Completed 200 OK in 560ms (Views: 403.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/webmaster/sites" for 127.0.0.1 at 2013-10-23 10:39:39 +0400
+Processing by Webmaster::SitesController#index as HTML
+  [1m[35mSite Load (1.0ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered webmaster/sites/index.html.haml within layouts/webmaster (22.4ms)
+  Rendered _shared/_webmaster_menu.html.haml (17.4ms)
+  Rendered _shared/_menu.html.haml (0.5ms)
+  Rendered _shared/_header.html.haml (3.9ms)
+  Rendered _shared/_footer.html.haml (1.0ms)
+  Rendered layouts/application.html.haml (153.4ms)
+Completed 200 OK in 241ms (Views: 205.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/advertisers/" for 127.0.0.1 at 2013-10-23 10:39:42 +0400
+Processing by WelcomeController#advertisers as HTML
+  Rendered welcome/advertisers.html.haml within layouts/application (13.6ms)
+  Rendered _shared/_menu.html.haml (0.8ms)
+  Rendered _shared/_header.html.haml (5.1ms)
+  Rendered _shared/_footer.html.haml (1.7ms)
+Completed 200 OK in 85ms (Views: 82.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-23 10:39:53 +0400
+Processing by WelcomeController#index as HTML
+  Rendered _shared/_banner.html.haml (1.5ms)
+  Rendered welcome/index.html.haml within layouts/application (5.0ms)
+  Rendered _shared/_menu.html.haml (0.8ms)
+  Rendered _shared/_header.html.haml (5.1ms)
+  Rendered _shared/_footer.html.haml (1.9ms)
+Completed 200 OK in 80ms (Views: 78.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-23 10:40:16 +0400
+Processing by WelcomeController#index as HTML
+  Rendered _shared/_banner.html.haml (2.2ms)
+  Rendered welcome/index.html.haml within layouts/application (6.4ms)
+  Rendered _shared/_menu.html.haml (1.0ms)
+  Rendered _shared/_header.html.haml (5.8ms)
+  Rendered _shared/_footer.html.haml (2.4ms)
+Completed 200 OK in 81ms (Views: 78.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+Processing by WelcomeController#index as HTML
+  Rendered _shared/_banner.html.haml (1.0ms)
+  Rendered welcome/index.html.haml within layouts/application (3.5ms)
+  Rendered _shared/_menu.html.haml (0.4ms)
+  Rendered _shared/_header.html.haml (2.1ms)
+  Rendered _shared/_footer.html.haml (0.7ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/vendor/custom.modernizr.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/banner-img-1.png" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/banner-img-2.png" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/banner-img-3.png" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/icons-s70d87a18fe.png" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/btns-sc1cf4af97b.png" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:20 +0400
+
+
+Started GET "/assets/opensans-condbold-webfont-bold.ttf" for 127.0.0.1 at 2013-10-23 10:47:21 +0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:21 +0400
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:21 +0400
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:21 +0400
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:21 +0400
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:21 +0400
+
+
+Started GET "/assets/vendor/highstock/highstock.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/vendor/highstock/hs.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/backbone.marionette.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/Backbone.ModelBinder.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/hamlcoffee.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/backbone/models/teaser_block.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/backbone/views/teaser_block_constructor.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/backbone/templates/teaser_block_vertical.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/backbone/teaserlead.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/backbone/views/teaser_block_vertical.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/initializers/base.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/vendor/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/widgets/teaser_block_constructor.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/widgets.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/vendor/load-image.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/vendor/canvas-to-blob.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/vendor/tmpl.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload-fp.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload-ui.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/locale.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery-fileupload/index.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery.minicolors.simple_form.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/jquery.minicolors.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/cocoon.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-10-23 10:47:22 +0400

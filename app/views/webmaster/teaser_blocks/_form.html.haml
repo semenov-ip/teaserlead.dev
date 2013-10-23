@@ -1,0 +1,22 @@
+.teaser-block-constructor-js
+  %script{id:'teaser-block-constructor-template', type:'text/template'}
+    .small-7.columns
+      .block-preview
+        preview
+    .small-5.columns
+      = simple_form_for [:webmaster, @teaser_block], :html => { :class => 'form-horizontal' } do |f|
+        = f.input :topic, collection: Category.ancestry_options
+        = f.input :text_color, input_html: { class: 'colorpicker' }
+        = f.input :text_encoding, collection: ['utf8', 'win1251', 'koir8']
+        = f.input :text_position
+        = f.input :font, collection: ['arial', 'verdana', 'times new roman']
+        = f.input :block_size, collection: [['100x100', 100], ['150x150', 150], ['200x200', 200]]
+        = f.input :block_bg_color, input_html: { class: 'colorpicker' }
+        = f.input :block_border_color, input_html: { class: 'colorpicker' }
+        = f.input :block_margin
+        = f.input :block_position, collection: ['vertical', 'horizontal', 'square']
+        = f.input :teaser_count
+        = f.input :site_id, collection: Site.all
+        .form-actions
+          = f.button :submit, :class => ''
+          = link_to t('.cancel', :default => t("helpers.links.cancel")), webmaster_teaser_blocks_path, :class => 'button secondary'

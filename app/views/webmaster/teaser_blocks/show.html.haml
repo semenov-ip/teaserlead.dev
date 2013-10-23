@@ -1,0 +1,53 @@
+- model_class = TeaserBlock
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:topic) + ':'
+  %br
+  = @teaser_block.topic
+%p
+  %strong= model_class.human_attribute_name(:text_color) + ':'
+  %br
+  = @teaser_block.text_color
+%p
+  %strong= model_class.human_attribute_name(:text_encoding) + ':'
+  %br
+  = @teaser_block.text_encoding
+%p
+  %strong= model_class.human_attribute_name(:text_position) + ':'
+  %br
+  = @teaser_block.text_position
+%p
+  %strong= model_class.human_attribute_name(:font) + ':'
+  %br
+  = @teaser_block.font
+%p
+  %strong= model_class.human_attribute_name(:block_size) + ':'
+  %br
+  = @teaser_block.block_size
+%p
+  %strong= model_class.human_attribute_name(:block_bg_color) + ':'
+  %br
+  = @teaser_block.block_bg_color
+%p
+  %strong= model_class.human_attribute_name(:block_border_color) + ':'
+  %br
+  = @teaser_block.block_border_color
+%p
+  %strong= model_class.human_attribute_name(:block_margin) + ':'
+  %br
+  = @teaser_block.block_margin
+%p
+  %strong= model_class.human_attribute_name(:block_position) + ':'
+  %br
+  = @teaser_block.block_position
+%p
+  %strong= model_class.human_attribute_name(:site_id) + ':'
+  %br
+  = @teaser_block.site_id
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), webmaster_teaser_blocks_path, :class => 'button secondary'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_webmaster_teaser_block_path(@teaser_block), :class => 'button secondary'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), webmaster_teaser_block_path(@teaser_block), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'button alert'

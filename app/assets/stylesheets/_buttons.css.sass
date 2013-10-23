@@ -1,0 +1,52 @@
+@import "btns/*.png"
+$btns: sprite-map("btns/*.png")
+$btns-spacing: 20px
+$blue: #2ba6cb
+$green: #5da423
+$white: #fff
+
+.button-arr
+  display: inline-block
+  background: $blue
+  color: #fff
+  font-size: 12px
+  line-height: 1
+  padding: 12px 10px
+  margin:
+    left: 12px
+    right: 16px
+  position: relative
+  cursor: pointer
+  text-transform: uppercase
+  &:hover
+    color: #fff
+    opacity: 0.92
+  &:after,
+  &:before
+    display: block
+    content: ''
+    position: absolute
+    height: 100%
+    top: 0
+    background: sprite-url($btns)
+  &:before
+    left: -12px
+    width: 12px
+    background-position: sprite-position($btns, btn-blue-left)
+  &:after
+    right: -16px
+    width: 16px
+    background-position: sprite-position($btns, btn-blue-right)
+  &.green
+    background: $green
+  &.white
+    background: $white
+    color: $green
+
+$btns-color: "green","white"
+@each $color in $btns-color
+  .button-arr.#{$color}
+    &:before
+      background-position: sprite-position($btns, btn-#{$color}-left)
+    &:after
+      background-position: sprite-position($btns, btn-#{$color}-right)

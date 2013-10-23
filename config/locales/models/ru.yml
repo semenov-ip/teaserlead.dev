@@ -1,0 +1,39 @@
+ru:
+  activerecord:
+    models:
+      advertisement_campaign: "Рекламная кампания"
+      category: "Категория"
+      teaser: "Тизер"
+      teaser_block: "Тизерный блок"
+      site: "Площадка"
+      user: "Пользователь"
+    attributes:
+      advertisement_campaign:
+        name: "Название"
+        url: "URL"
+      category:
+        name: "Название"
+      teaser:
+        text: "Текст"
+        image: "Изображение"
+        url: "URL"
+      teaser_block:
+        topic: "Тема"
+        text_color: "Цвет текста"
+        text_encoding: "Кодировка"
+        text_position: "Положение текста"
+        font: "Шрифт"
+        block_size: "Размер блока"
+        block_bg_color: "Фон блока"
+        block_border_color: "Цвет границы блока"
+        block_margin: "Внутриблочный отступ"
+        block_position: "Расположение в блоке"
+        teaser_count: "Количество тизеров"
+      site:
+        title: "Заголовок"
+        url: "URL"
+        description: "Описание"
+      user:
+        email: "E-mail"
+        password: "Пароль"
+        roles: "Роли"

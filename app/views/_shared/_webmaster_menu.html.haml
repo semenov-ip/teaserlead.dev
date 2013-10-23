@@ -1,0 +1,39 @@
+.section-container.accordion{data:{section: "accordion"}}
+  %section{class: "#{'active' if current_page?(webmaster_root_path)}"}
+    %p.title{data:{section:{title: ""}}}
+      = link_to 'Dashboard', webmaster_root_path
+  %section{class: "#{'active' if current_page?(webmaster_sites_path)}"}
+    %p.title{data:{section:{title: ""}}}
+      %a{href: "#"} Управление рекламными площадками
+    .content{data:{section:{content: ""}}}
+      %ul.side-nav
+        %li
+          = link_to "Список площадок", webmaster_sites_path
+        %li
+          = link_to "Добавить площадку", new_webmaster_site_path
+
+  %section{class: "#{'active' if current_page?(webmaster_teaser_blocks_path)}"}
+    %p.title{data:{section:{title: ""}}}
+      %a{href: "#"} Управление тизерными блоками
+    .content{data:{section:{content: ""}}}
+      %ul.side-nav
+        %li
+          = link_to "Список тизерных блоков", webmaster_teaser_blocks_path
+        %li
+          = link_to "Добавить тизерный блок", new_webmaster_teaser_block_path
+
+  %section
+    %p.title{data:{section:{title: ""}}}
+      %a{href: "#"} Статистика
+    .content{data:{section:{content: ""}}}
+      %ul.side-nav
+        %li
+          = link_to "Общая статистика", mockups_path
+
+  %section
+    %p.title{data:{section:{title: ""}}}
+      %a{href: "#"} Служба поддержки
+    .content{data:{section:{content: ""}}}
+      %ul.side-nav
+        %li
+          %a{href: "#"} Поддержка

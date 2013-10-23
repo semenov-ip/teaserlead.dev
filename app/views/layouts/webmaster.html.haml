@@ -1,0 +1,8 @@
+- content_for :content do
+  %section.section-main-content
+    .row
+      .small-3.columns
+        = render '/_shared/webmaster_menu'
+      .small-9.columns
+        = yield
+= render template: 'layouts/application'
